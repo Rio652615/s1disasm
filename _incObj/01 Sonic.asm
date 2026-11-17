@@ -2409,7 +2409,7 @@ Sonic_LoadGfx:
 .nochange:
 		rts	
 Sonic_Peelout:
-		btst	#up,(v_jpadhold).w	; is the Up button held?
+		btst	#bitUp,(v_jpadhold2).w	; is the Up button held?
 		beq.s	.nopeel			; if not, branch
 
 		move.w	#sfx_Teleport,d0	; play dash sound as a test
