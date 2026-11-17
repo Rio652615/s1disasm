@@ -17,7 +17,8 @@ SonicPlayer:
 
 ; Obj01_Normal:
 Sonic_Normal:
-		moveq	#0,d0					; clear d0
+		moveq	#0,d0	
+bsr.w	Sonic_Peelout
 		move.b	obRoutine(a0),d0			; get current routine number
 		move.w	Sonic_Index(pc,d0.w),d1			; find appropriate entry in jump table
 		jmp	Sonic_Index(pc,d1.w)			; jump there
