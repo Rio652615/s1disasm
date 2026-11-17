@@ -2407,6 +2407,8 @@ Sonic_LoadGfx:
 
 ; locret_13C96:
 .nochange:
-		rts						; return
+		rts	
+Sonic_Peelout:
+		rts
 ; End of function Sonic_LoadGfx
 ; ===========================================================================
