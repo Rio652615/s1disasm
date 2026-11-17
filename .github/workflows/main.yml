@@ -1,0 +1,20 @@
+name: Build Sonic 1 ROM
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Wine
+        run: sudo apt-get update && sudo apt-get install -y wine64
+      - name: Build ROM
+        run: wine cmd /c build.bat
+      - name: Upload ROM
+        uses: actions/upload-artifact@v4
+        with:
+          name: sonic1-built-rom
+          path: s1built.bin
